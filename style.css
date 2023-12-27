@@ -1,0 +1,207 @@
+:root{
+    /*### Primary */
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    /* ### Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%, 0.85);
+    --Off-black: hsl(0, 0%, 8%);
+}
+
+@font-face {
+    font-family: "PoppinsRegularItalic", sans-serif;
+    src: url(assets/fonts/Poppins-Regular.ttf) format("ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "PoppinsRegular", sans-serif;
+    src: url(assets/fonts/Poppins-Regular.ttf) format("ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "PoppinsExtraBold", sans-serif;
+    src: url(assets/fonts/Poppins-ExtraBold.ttf) format("ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: "PoppinsExtraBoldItalic", sans-serif;
+    src: url(assets/fonts/Poppins-ExtraBoldItalic.ttf) format("ttf");
+    font-weight: 900;
+    font-style: italic;
+}
+
+body{
+    background-color: var(--Off-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+    min-width: 460px;
+}
+
+main{
+    background-color: var(--White);
+    width: 90%;
+    max-width: 700px;
+    padding: 3rem 1.5rem;
+    border-radius: 25px 25px 100px 25px;
+    transition: all 1s;
+}
+
+form{
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid var(--Light-grey);
+    justify-content: space-between;
+    padding-bottom: 4.5rem;
+    margin-bottom: 2.5rem;
+    transition: all 1s;
+}
+
+label{
+    font-family: "PoppinsRegular", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.9em;
+    position: relative;
+}
+
+input, input::placeholder{
+    font-family: "PoppinsExtraBold", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+label, input::placeholder{
+    color: var(--Smokey-grey);
+}
+
+input, li{
+    color: var(--Off-black);
+}
+
+input{
+    padding: 0.9rem;
+    font-size: 1.4em;
+    max-width: 120px;
+    border: 1px solid var(--Light-grey);
+    border-radius: 10px;
+}
+
+input:focus{
+    outline: 1px solid var(--Smokey-grey);
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    font-family: "PoppinsExtraBoldItalic", sans-serif;
+    font-weight: 900;
+    font-style: italic; 
+    font-size: 4em;
+}
+
+li span{
+    color: var(--Purple);
+    letter-spacing: 0.5rem;
+    position: relative;
+    padding-right: 10px;
+}
+
+#submit-btn{
+    background-color: var(--Purple);
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 1.2rem;
+    position: absolute;
+    bottom: -30%;
+    transition: all 0.5s;
+}
+
+#submit-btn:hover{
+    background-color: var(--Off-black);
+}
+
+.input-error-msg-span{
+    font-family: "PoppinsRegularItalic", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--Light-red);
+    letter-spacing: 0;
+    font-size: 0.75em;
+    text-transform: initial;
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    display: none;
+}
+
+.input-error-msg-active{
+    display: block;
+}
+
+.invalid-input{
+    border: 1px solid var(--Light-red);
+}
+
+.invalid-input:focus{
+    outline: 1px solid var(--Light-red);
+}
+
+.invalid-input-date-label{
+    color: var(--Light-red);
+}
+
+footer{ 
+    font-family: "PoppinsRegularItalic", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 5rem; color: var(--Off-black); 
+}
+.attribution { font-size: 11px; text-align: center; color: var(--Off-black);}
+.attribution a { color: hsl(228, 45%, 44%); text-decoration: none; font-size: 14px;}
+.attribution a:hover { text-decoration: underline; }
+
+.age-span-active{
+    animation: fadeIn 1s ease;
+}
+
+.age-span-active-letter-spacing{
+    letter-spacing: 0;
+}
+
+@media only screen and (min-width: 795px){
+    form{
+        justify-content: flex-start;
+        gap: 2rem;
+        padding-bottom: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    li{
+        font-size: 5em;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        left: -10px;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
