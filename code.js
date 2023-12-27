@@ -46,9 +46,9 @@ form.addEventListener("submit", (e)=>{
     isValid(inputs[1], labels[1], errorMessages[1]);
     isValid(inputs[2], labels[2], errorMessages[2]);
 
-    let year = inputs[2].value;
-    let month = inputs[1].value;
-    let day = inputs[0].value;
+    let year = inputs[2].value.trim();
+    let month = inputs[1].value.trim();
+    let day = inputs[0].value.trim();
 
     console.log("Year:", year);
     console.log("Month:", month);
